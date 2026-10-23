@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bakugo — Fan Site</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: #fff8f0;
+      background: #100d0c;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 7%;
+      border-bottom: 1px solid #ffffff22;
+    }
+
+    .logo {
+      color: #ff6b2c;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    nav a {
+      margin-left: 24px;
+      color: #fff8f0;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: #ff6b2c;
+    }
+
+    .accueil {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      padding: 70px 10%;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 78% 50%, #a93212 0, transparent 32%),
+        linear-gradient(115deg, #100d0c 45%, #35140d 100%);
+    }
+
+    .contenu {
+      max-width: 650px;
+    }
+
+    .etiquette {
+      color: #ff9b58;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 18px 0;
+      font-size: clamp(56px, 11vw, 120px);
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    h1 span {
+      color: #ff6b2c;
+    }
+
+    .description {
+      max-width: 540px;
+      color: #d8cfca;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .bouton {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 15px 24px;
+      border-radius: 5px;
+      background: #ff6b2c;
+      color: #160d09;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .bouton:hover {
+      background: #ff9b58;
+    }
+
+    .mention {
+      margin-top: 35px;
+      color: #a99d96;
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      nav a {
+        margin: 0 14px 0 0;
+      }
+
+      .accueil {
+        min-height: 75vh;
+        padding: 55px 8%;
+      }
+    }
+     .section-profil {
+      padding: 90px 10%;
+      background: #191412;
+    }
+
+    .section-profil h2 {
+      margin: 10px 0;
+      font-size: clamp(36px, 6vw, 64px);
+      text-transform: uppercase;
+    }
+
+    .section-profil h2 span {
+      color: #ff6b2c;
+    }
+
+    .texte-profil {
+      max-width: 760px;
+      margin: 20px auto 35px;
+      color: #d8cfca;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .cartes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .carte {
+      padding: 24px;
+      border: 1px solid #ff6b2c66;
+      border-radius: 10px;
+      background: #241b17;
+    }
+
+    .carte h3 {
+      margin-top: 0;
+      color: #ff9b58;
+    }
+
+    .carte p {
+      margin-bottom: 0;
+      color: #d8cfca;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 700px) {
+      .cartes {
+        grid-template-columns: 1fr;
+      }
+
+      .section-profil {
+        padding: 65px 8%;
+      }
+    }
+      footer {
+      padding: 24px;
+      border-top: 1px solid #ffffff22;
+      background: #100d0c;
+      color: #d8cfca;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    footer strong {
+      color: #ff9b58;
+    }
+      .section-galerie {
+      padding: 80px 8%;
+      background: #100d0c;
+      text-align: center;
+    }
+
+    .section-galerie h2 {
+      font-size: clamp(34px, 6vw, 58px);
+      text-transform: uppercase;
+    }
+
+    .texte-galerie {
+      color: #d8cfca;
+    }
+
+    .grille-galerie {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 1000px;
+      margin: 35px auto 0;
+    }
+
+    .grille-galerie a {
+      display: block;
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      border: 1px solid #ff6b2c66;
+      border-radius: 10px;
+    }
+
+    .grille-galerie img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .grille-galerie a:hover img {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 700px) {
+      .grille-galerie {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+     .section-video {
+      padding: 80px 8%;
+      background: #191412;
+      text-align: center;
+    }
+
+    .section-video h2 {
+      font-size: clamp(34px, 6vw, 58px);
+      text-transform: uppercase;
+    }
+
+    .cadre-video {
+      max-width: 900px;
+      margin: 35px auto 0;
+      overflow: hidden;
+      border: 1px solid #ff6b2c66;
+      border-radius: 12px;
+      box-shadow: 0 15px 50px #0008;
+    }
+
+    .cadre-video iframe {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+    }
+     .fiche-technique {
+      padding: 75px 8%;
+      background: #100d0c;
+      text-align: center;
+    }
+
+    .grille-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      max-width: 900px;
+      margin: 35px auto 0;
+    }
+
+    .stat {
+      padding: 25px 15px;
+      border: 1px solid #ff6b2c66;
+      border-radius: 10px;
+      background: #241b17;
+    }
+
+    .stat p {
+      margin: 0 0 10px;
+      color: #a99d96;
+    }
+
+    .stat strong {
+      color: #ff9b58;
+      font-size: 22px;
+    }
+
+    @media (max-width: 700px) {
+      .grille-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+     .accueil {
+      gap: 40px;
+    }
+
+    .contenu {
+      flex: 1;
+      max-width: 560px;
+    }
+
+    .image-hero {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+         .image-hero img {
+      display: block;
+      width: min(100%, 420px);
+      height: auto;
+      max-height: 78vh;
+      object-fit: contain;
+    }
+
+    @media (max-width: 700px) {
+      .accueil {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+      }
+
+      .image-hero {
+        width: 100%;
+      }
+    }
+     .quiz-controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    .quiz-controls select {
+      padding: 13px;
+      border: 1px solid #ff6b2c;
+      border-radius: 7px;
+      background: #100d0c;
+      color: #fff8f0;
+      font-size: 16px;
+    }
+
+    .quiz-option:disabled {
+      cursor: default;
+      opacity: 0.85;
+    }
+
+    .quiz-option.correct {
+      background: #238653;
+      color: white;
+    }
+
+    .quiz-option.incorrect {
+      background: #a83232;
+      color: white;
+    }
+
+    #quiz-result {
+      line-height: 1.6;
+    }
+     /* Style du quiz */
+    .quiz-section {
+      max-width: 1050px;
+      margin: 100px auto;
+      padding: 50px 25px;
+      text-align: center;
+    }
+
+    .quiz-section h2 {
+      color: #ff6b2c;
+      font-size: clamp(36px, 6vw, 64px);
+      margin: 10px 0 20px;
+    }
+
+    .quiz-section .etiquette {
+      color: #ff6b2c;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .quiz-section .texte-galerie {
+      color: #c9c1bc;
+      font-size: 18px;
+    }
+
+    .quiz-card {
+      max-width: 800px;
+      margin: 35px auto;
+      padding: 35px;
+      background: linear-gradient(145deg, #211714, #100d0c);
+      border: 1px solid #71371f;
+      border-radius: 20px;
+      box-shadow: 0 0 35px rgba(255, 107, 44, 0.18);
+    }
+
+    .quiz-controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .quiz-controls label {
+      color: #fff8f0;
+      font-size: 18px;
+    }
+
+    .quiz-controls select {
+      padding: 13px 16px;
+      border: 1px solid #ff6b2c;
+      border-radius: 8px;
+      background: #100d0c;
+      color: #fff8f0;
+      font-size: 16px;
+    }
+
+    #quiz-zone > p {
+      color: #d9d0ca;
+      font-size: 18px;
+    }
+
+    #quiz-zone h3 {
+      color: #fff8f0;
+      font-size: clamp(22px, 4vw, 32px);
+      line-height: 1.4;
+      margin: 25px 0;
+    }
+
+    .quiz-answers {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 25px 0;
+    }
+
+    .quiz-section .quiz-option {
+      width: 100%;
+      min-height: 60px;
+      padding: 15px 20px;
+      border: 1px solid #71371f;
+      border-radius: 10px;
+      background: #30221d;
+      color: #fff8f0;
+      font-size: 17px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .quiz-section .quiz-option:hover:not(:disabled) {
+      background: #ff6b2c;
+      color: #160e0b;
+      transform: translateY(-2px);
+    }
+
+    .quiz-section .quiz-option:disabled {
+      cursor: default;
+      opacity: 0.9;
+    }
+
+    .quiz-section .quiz-option.correct {
+      background: #238653;
+      border-color: #42c77d;
+      color: white;
+    }
+
+    .quiz-section .quiz-option.incorrect {
+      background: #a83232;
+      border-color: #e35c5c;
+      color: white;
+    }
+
+    #quiz-feedback {
+      color: #fff8f0;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .quiz-section {
+        margin: 55px auto;
+        padding: 30px 15px;
+      }
+
+      .quiz-card {
+        padding: 22px 16px;
+      }
+
+      .quiz-answers {
+        grid-template-columns: 1fr;
+      }
+    }
+     .quiz-level-badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid #ff6b2c;
+      border-radius: 20px;
+      color: #ff6b2c !important;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+     .quiz-progress {
+      width: 100%;
+      height: 12px;
+      margin: 15px 0 25px;
+      overflow: hidden;
+      border-radius: 20px;
+      background: #3a2a24;
+    }
+
+    .quiz-progress-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #ff6b2c, #ffb347);
+      transition: width 0.3s ease;
+    }
+     .photo-agrandie {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      background: rgba(8, 7, 7, 0.94);
+      cursor: zoom-out;
+    }
+
+    .photo-agrandie img {
+      max-width: 90vw;
+      max-height: 88vh;
+      object-fit: contain;
+      border: 2px solid #ff6b2c;
+      border-radius: 12px;
+      box-shadow: 0 0 35px rgba(255, 107, 44, 0.3);
+    }
+
+    .photo-agrandie .fermer-photo {
+      position: absolute;
+      top: 18px;
+      right: 28px;
+      color: white;
+      font-size: 42px;
+      cursor: pointer;
+    }
+     .retour-haut {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 1000;
+      width: 55px;
+      height: 55px;
+      border: 1px solid #ff6b2c;
+      border-radius: 50%;
+      background: #ff6b2c;
+      color: #100d0c;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255, 107, 44, 0.35);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .retour-haut:hover {
+      transform: translateY(-4px);
+      background: #ff8a52;
+    }
+     .legende-photo {
+      position: absolute;
+      bottom: 20px;
+      margin: 0;
+      color: #fff8f0;
+      font-size: 18px;
+      text-align: center;
+    }
+ </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">PLUS ULTRA // FAN SITE</div>
+
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#profil">Profil</a>
+      <a href="#galerie">Galerie</a>
+            <a href="#videos">Vidéos</a>
+            <a href="#fiche">Fiche technique</a>
+            <a href="#quiz">Quiz</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="accueil" id="accueil">
+      <div class="contenu">
+        <p class="etiquette">My Hero Academia • Dossier de personnage</p>
+
+        <h1>Katsuki<br><span>Bakugo</span></h1>
+
+        <p class="description">
+          Explosif, déterminé et toujours prêt à se dépasser :
+          découvre le parcours et les capacités de Bakugo.
+        </p>
+
+        <a class="bouton" href="#profil">Découvrir son profil</a>
+
+        <p class="mention">
+          Projet de fan non officiel. Non affilié aux créateurs de l’œuvre.
+        </p>
+      </div>
+           <div class="image-hero">
+          <img src="images/bakugo7-detoure.png" alt="Bakugo">
+        </div>
+    </section>
+     <section class="section-profil" id="profil">
+      <p class="etiquette">Fiche de personnage</p>
+      <h2>Un esprit <span>explosif</span></h2>
+
+      <p class="texte-profil">
+        Bakugo est un élève déterminé qui veut devenir un grand héros.
+        Sa confiance, son énergie et son envie de progresser font partie
+        de ce qui le rend marquant.
+      </p>
+
+      <div class="cartes">
+        <article class="carte">
+          <h3>Son Alter</h3>
+          <p>Explosion : il utilise la sueur de ses paumes pour produire des explosions.</p>
+        </article>
+
+        <article class="carte">
+          <h3>Son objectif</h3>
+          <p>Devenir un héros puissant et atteindre le sommet par ses propres efforts.</p>
+        </article>
+
+        <article class="carte">
+          <h3>Son caractère</h3>
+          <p>Fier, compétitif et direct, il ne renonce pas facilement à ses ambitions.</p>
+        </article>
+      </div>
+    </section>
+    <section class="section-galerie" id="galerie">
+      <p class="etiquette">Galerie</p>
+      <h2>Bakugo en images</h2>
+      <p class="texte-galerie">Clique sur une photo pour l’agrandir.</p>
+
+      <div class="grille-galerie">
+        <a href="images/bakugo1.jpg" target="_blank" rel="noopener">
+          <img src="images/bakugo1.jpg" alt="Bakugo, photo 1">
+        </a>
+        <a href="images/bakugo2.jpg" target="_blank" rel="noopener">
+          <img src="images/bakugo2.jpg" alt="Bakugo, photo 2">
+        </a>
+        <a href="images/bakugo3.jpg" target="_blank" rel="noopener">
+          <img src="images/bakugo3.jpg" alt="Bakugo, photo 3">
+        </a>
+        <a href="images/bakugo4.jpg" target="_blank" rel="noopener">
+          <img src="images/bakugo4.jpg" alt="Bakugo, photo 4">
+        </a>
+        <a href="images/bakugo5.jpg" target="_blank" rel="noopener">
+          <img src="images/bakugo5.jpg" alt="Bakugo, photo 5">
+        </a>
+        <a href="images/bakugo6.jpg" target="_blank" rel="noopener">
+          <img src="images/bakugo6.jpg" alt="Bakugo, photo 6">
+        </a>
+      </div>
+    </section>
+    <section class="section-video" id="videos">
+      <p class="etiquette">Sur écran</p>
+      <h2>Bakugo en vidéo</h2>
+      <p class="texte-galerie">Une vidéo de Bakugo.</p>
+
+      <div class="cadre-video">
+              <video controls preload="metadata" style="display: block; width: 100%; height: auto;">
+          <source src="videos/Bakugo.mp4" type="video/mp4">
+          Ton navigateur ne peut pas lire cette vidéo.
+        </video>
+      </div>
+    </section>
+    <section class="fiche-technique" id="fiche">
+      <p class="etiquette">Données du personnage</p>
+      <h2>Fiche technique</h2>
+
+      <div class="grille-stats">
+        <article class="stat">
+          <p>Alter</p>
+          <strong>Explosion</strong>
+        </article>
+
+        <article class="stat">
+          <p>Anniversaire</p>
+          <strong>20 avril</strong>
+        </article>
+
+        <article class="stat">
+          <p>Taille</p>
+          <strong>172 cm</strong>
+        </article>
+      </div>
+    </section>
+</main>
+  <footer>Site créé par <strong>JACQUES TAVARES</strong></footer>
+<section class="quiz-section" id="quiz">
+  <p class="etiquette">À toi de jouer</p>
+  <h2>Le grand quiz Bakugo</h2>
+  <p class="texte-galerie">
+    Attention : les niveaux difficiles révèlent des moments de l’histoire.
+  </p>
+
+  <div class="quiz-card">
+    <div class="quiz-controls">
+      <label for="quiz-level">Choisis un niveau :</label>
+
+      <select id="quiz-level">
+        <option value="tous">Tous les niveaux — 50 questions</option>
+        <option value="facile">Facile — 13 questions</option>
+        <option value="moyen">Moyen — 13 questions</option>
+        <option value="difficile">Difficile — 12 questions</option>
+        <option value="expert">Expert — 12 questions</option>
+      </select>
+
+      <button class="quiz-option" id="start-quiz" type="button">
+        Commencer
+      </button>
+    </div>
+
+    <div id="quiz-zone">
+      <p>Choisis un niveau, puis clique sur « Commencer ».</p>
+    </div>
+  </div>
+</section>
+<script>
+const questionsBakugo = [
+  // FACILE — 13 questions
+  {
+    niveau: "facile",
+    question: "Quel est le prénom de Bakugo ?",
+    choix: ["Shoto", "Katsuki", "Izuku", "Eijiro"],
+    bonne: 1
+  },
+  {
+    niveau: "facile",
+    question: "Dans quel anime apparaît Bakugo ?",
+    choix: ["Naruto", "One Piece", "My Hero Academia", "Dragon Ball"],
+    bonne: 2
+  },
+  {
+    niveau: "facile",
+    question: "Comment s’appelle son Alter ?",
+    choix: ["Explosion", "Glace", "Gravité zéro", "Lavage"],
+    bonne: 0
+  },
+  {
+    niveau: "facile",
+    question: "Dans quel lycée Bakugo étudie-t-il ?",
+    choix: ["Le lycée Shiketsu", "Le lycée Yuei (U.A.)", "Le lycée Aldera", "Le lycée Ketsubutsu"],
+    bonne: 1
+  },
+  {
+    niveau: "facile",
+    question: "Dans quelle classe est-il au début de l’histoire ?",
+    choix: ["1-A", "1-B", "2-A", "3-A"],
+    bonne: 0
+  },
+  {
+    niveau: "facile",
+    question: "Quel surnom Izuku utilise-t-il souvent pour Bakugo ?",
+    choix: ["Deku", "Kacchan", "Shoto", "Dynamight"],
+    bonne: 1
+  },
+  {
+    niveau: "facile",
+    question: "Quelle est la couleur des cheveux de Bakugo ?",
+    choix: ["Noire", "Verte", "Blonde", "Rouge"],
+    bonne: 2
+  },
+  {
+    niveau: "facile",
+    question: "Quelle est sa grande ambition ?",
+    choix: ["Devenir le meilleur héros", "Devenir professeur", "Quitter le Japon", "Devenir médecin"],
+    bonne: 0
+  },
+  {
+    niveau: "facile",
+    question: "Quel est le caractère de Bakugo au début de l’histoire ?",
+    choix: ["Très timide", "Calme et silencieux", "Colérique et compétitif", "Toujours endormi"],
+    bonne: 2
+  },
+  {
+    niveau: "facile",
+    question: "Que produit la sueur des paumes de Bakugo ?",
+    choix: ["Une substance explosive", "De la glace", "De la fumée bleue", "De l’eau"],
+    bonne: 0
+  },
+  {
+    niveau: "facile",
+    question: "Quel est le prénom de Midoriya ?",
+    choix: ["Katsuki", "Izuku", "Denki", "Tenya"],
+    bonne: 1
+  },
+  {
+    niveau: "facile",
+    question: "Bakugo veut-il devenir un héros ou un vilain ?",
+    choix: ["Un héros", "Un vilain", "Un policier", "Un professeur dès le début"],
+    bonne: 0
+  },
+  {
+    niveau: "facile",
+    question: "Quel objet Bakugo porte-t-il souvent aux poignets avec son costume ?",
+    choix: ["De grands équipements en forme de grenades", "Des ailes", "Des gants blancs ordinaires", "Une cape"],
+    bonne: 0
+  },
+
+  // MOYEN — 13 questions
+  {
+    niveau: "moyen",
+    question: "Qui entraîne Bakugo pendant son stage de héros ?",
+    choix: ["Endeavor", "Best Jeanist", "Present Mic", "All Might"],
+    bonne: 1
+  },
+  {
+    niveau: "moyen",
+    question: "Quel événement Bakugo remporte-t-il au Festival sportif de Yuei ?",
+    choix: ["La course d’obstacles", "Le tournoi de combat", "Le concours de cuisine", "Le match contre la classe 1-B"],
+    bonne: 1
+  },
+  {
+    niveau: "moyen",
+    question: "Que se passe-t-il lors de la première épreuve pour obtenir le permis provisoire ?",
+    choix: ["Bakugo échoue", "Bakugo devient professeur", "Bakugo quitte Yuei", "Bakugo gagne le Festival sportif"],
+    bonne: 0
+  },
+  {
+    niveau: "moyen",
+    question: "Quel est le résultat de Bakugo à l’examen pratique final contre All Might ?",
+    choix: ["Il réussit avec Izuku", "Il abandonne immédiatement", "Il est expulsé", "Il gagne seul contre All Might"],
+    bonne: 0
+  },
+  {
+    niveau: "moyen",
+    question: "Quel groupe enlève Bakugo pendant l’attaque du camp d’entraînement ?",
+    choix: ["L’Armée de libération", "L’Alliance des vilains", "Les Hassaikai", "La classe 1-B"],
+    bonne: 1
+  },
+  {
+    niveau: "moyen",
+    question: "Où a lieu le combat qui marque la fin de carrière de héros d’All Might ?",
+    choix: ["Kamino", "Hosou", "Musutafu", "Nabu"],
+    bonne: 0
+  },
+  {
+    niveau: "moyen",
+    question: "Quel héros professionnel accompagne Bakugo pendant son stage ?",
+    choix: ["Best Jeanist", "Hawks", "Mirko", "Aizawa"],
+    bonne: 0
+  },
+  {
+    niveau: "moyen",
+    question: "Quel est le nom de héros que Bakugo choisit finalement ?",
+    choix: ["Explosion King", "Dynamight", "Ground Zero", "Blasty"],
+    bonne: 1
+  },
+  {
+    niveau: "moyen",
+    question: "Qui est le rival d’enfance de Bakugo devenu son camarade de classe ?",
+    choix: ["Tenya Iida", "Izuku Midoriya", "Shoto Todoroki", "Hanta Sero"],
+    bonne: 1
+  },
+  {
+    niveau: "moyen",
+    question: "Quel camarade de classe devient un ami proche de Bakugo ?",
+    choix: ["Eijiro Kirishima", "Minoru Mineta", "Koji Koda", "Mashirao Ojiro"],
+    bonne: 0
+  },
+  {
+    niveau: "moyen",
+    question: "Que permet surtout son équipement de poignet ?",
+    choix: ["Stocker sa sueur explosive pour la libérer en forte explosion", "Lui faire voler sans utiliser son Alter", "Le rendre invisible", "Guérir ses blessures"],
+    bonne: 0
+  },
+  {
+    niveau: "moyen",
+    question: "Quel est le nom de héros d’All Might ?",
+    choix: ["Deku", "Symbol of Peace", "Ingenium", "Endeavor"],
+    bonne: 1
+  },
+  {
+    niveau: "moyen",
+    question: "Quelle attitude Bakugo montre-t-il souvent pendant les combats ?",
+    choix: ["Il analyse et cherche à gagner", "Il refuse toujours de se battre", "Il attend que les autres gagnent", "Il oublie son objectif"],
+    bonne: 0
+  },
+
+  // DIFFICILE — 12 questions
+  {
+    niveau: "difficile",
+    question: "Avec quel camarade Bakugo passe-t-il l’examen pratique final contre All Might ?",
+    choix: ["Izuku Midoriya", "Shoto Todoroki", "Eijiro Kirishima", "Tenya Iida"],
+    bonne: 0
+  },
+  {
+    niveau: "difficile",
+    question: "Pourquoi Bakugo refuse-t-il d’être emmené par les héros lors de l’incident de Kamino ?",
+    choix: ["Il veut rejoindre les vilains", "Il ne veut pas être sauvé comme s’il était faible", "Il a perdu son costume", "Il veut rentrer chez lui"],
+    bonne: 1
+  },
+  {
+    niveau: "difficile",
+    question: "Quel cours Bakugo et Todoroki doivent-ils suivre après avoir échoué à l’examen du permis provisoire ?",
+    choix: ["Un cours de rattrapage", "Un cours de cuisine", "Un cours pour devenir enseignants", "Un stage de trois ans"],
+    bonne: 0
+  },
+  {
+    niveau: "difficile",
+    question: "Quelle est la particularité de l’Alter de Shoto Todoroki ?",
+    choix: ["Il contrôle le feu et la glace", "Il crée des explosions", "Il copie tous les Alters", "Il devient invisible"],
+    bonne: 0
+  },
+  {
+    niveau: "difficile",
+    question: "Quel événement pousse Bakugo à mieux comprendre la pression vécue par Izuku ?",
+    choix: ["Le départ d’All Might et les conséquences de Kamino", "Le Festival culturel", "La première journée de classe", "Le concours de cuisine"],
+    bonne: 0
+  },
+  {
+    niveau: "difficile",
+    question: "Lors de la guerre contre le Front de libération paranormal, qui Bakugo protège-t-il pendant l’attaque de Shigaraki ?",
+    choix: ["Izuku", "Mineta", "Present Mic", "Monoma"],
+    bonne: 0
+  },
+  {
+    niveau: "difficile",
+    question: "Quel héros professionnel aide Bakugo après sa blessure grave pendant la guerre ?",
+    choix: ["Edgeshot", "Hawks", "Fat Gum", "Gran Torino"],
+    bonne: 0
+  },
+  {
+    niveau: "difficile",
+    question: "Quel nom Bakugo utilise-t-il pour son attaque améliorée liée à ses explosions ?",
+    choix: ["Cluster", "One For All", "Blackwhip", "Prominence Burn"],
+    bonne: 0
+  },
+  {
+    niveau: "difficile",
+    question: "Dans quelle agence Bakugo, Izuku et Shoto travaillent-ils ensemble pendant leur stage ?",
+    choix: ["L’agence d’Endeavor", "L’agence de Best Jeanist", "L’agence de Hawks", "L’agence de Mirko"],
+    bonne: 0
+  },
+  {
+    niveau: "difficile",
+    question: "Quelle qualité Bakugo apprend-il progressivement à mieux montrer en équipe ?",
+    choix: ["La coopération", "La fuite", "L’indifférence", "La désobéissance systématique"],
+    bonne: 0
+  },
+  {
+    niveau: "difficile",
+    question: "Pourquoi Bakugo présente-t-il des excuses à Izuku ?",
+    choix: ["Pour la façon dont il l’a traité pendant des années", "Pour avoir perdu son uniforme", "Pour avoir raté un cours", "Pour avoir oublié son anniversaire"],
+    bonne: 0
+  },
+  {
+    niveau: "difficile",
+    question: "Quel est le lien entre Bakugo et All Might après la retraite de ce dernier ?",
+    choix: ["Bakugo connaît son secret et veut l’aider à protéger Izuku", "Bakugo devient son fils", "All Might lui donne son Alter", "Ils ne se sont jamais rencontrés"],
+    bonne: 0
+  },
+
+  // EXPERT — 12 questions
+  {
+    niveau: "expert",
+    question: "Quel est le nom complet du héros que Bakugo admire lorsqu’il est enfant ?",
+    choix: ["All Might", "Best Jeanist", "Endeavor", "Edgeshot"],
+    bonne: 0
+  },
+  {
+    niveau: "expert",
+    question: "Quelle combinaison décrit correctement l’Alter de Bakugo ?",
+    choix: ["Sa sueur explosive et son pouvoir de déclencher des explosions", "La glace de sa main gauche et le feu de sa droite", "Le contrôle des ombres et la téléportation", "La création de tissus et le durcissement"],
+    bonne: 0
+  },
+  {
+    niveau: "expert",
+    question: "Quel est le nom de la classe de Bakugo à Yuei ?",
+    choix: ["Seconde A", "Première A", "Première B", "Troisième A"],
+    bonne: 1
+  },
+  {
+    niveau: "expert",
+    question: "Quel est le nom de famille de Katsuki ?",
+    choix: ["Bakugo", "Midoriya", "Todoroki", "Kirishima"],
+    bonne: 0
+  },
+  {
+    niveau: "expert",
+    question: "Quel duo affronte All Might lors de l’examen pratique final ?",
+    choix: ["Bakugo et Midoriya", "Bakugo et Iida", "Bakugo et Kirishima", "Bakugo et Uraraka"],
+    bonne: 0
+  },
+  {
+    niveau: "expert",
+    question: "Quel est le nom de l’organisation criminelle dirigée par All For One ?",
+    choix: ["L’Alliance des vilains", "La classe 1-A", "Les Wild Wild Pussycats", "L’agence Endeavor"],
+    bonne: 0
+  },
+  {
+    niveau: "expert",
+    question: "Quel personnage est le successeur choisi par All For One ?",
+    choix: ["Tomura Shigaraki", "Dabi", "Overhaul", "Gentle Criminal"],
+    bonne: 0
+  },
+  {
+    niveau: "expert",
+    question: "Quel est le nom de l’Alter transmis par All Might à Izuku ?",
+    choix: ["One For All", "All For One", "Explosion", "Half-Cold Half-Hot"],
+    bonne: 0
+  },
+  {
+    niveau: "expert",
+    question: "Qui est le père de Shoto Todoroki ?",
+    choix: ["Endeavor", "All Might", "Best Jeanist", "Edgeshot"],
+    bonne: 0
+  },
+  {
+    niveau: "expert",
+    question: "Quel héros intervient pour aider à sauver Bakugo après sa blessure pendant la guerre ?",
+    choix: ["Edgeshot", "Hawks", "Present Mic", "Kamui Woods"],
+    bonne: 0
+  },
+  {
+    niveau: "expert",
+    question: "Quelle évolution caractérise le mieux Bakugo au fil de l’histoire ?",
+    choix: ["Il apprend à reconnaître ses erreurs et à coopérer", "Il abandonne son rêve de héros", "Il rejoint l’Alliance des vilains", "Il perd définitivement son Alter dès le début"],
+    bonne: 0
+  },
+  {
+    niveau: "expert",
+    question: "Le site consacré à Bakugo est-il un site officiel de My Hero Academia ?",
+    choix: ["Oui, c’est le site officiel", "Non, c’est un site de fan non officiel", "Oui, c’est le site de Yuei", "Non, c’est le site d’All Might"],
+    bonne: 1
+  }
+];
+
+let questionsDuTour = [];
+let numeroQuestion = 0;
+for (let i = questionsDuTour.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [questionsDuTour[i], questionsDuTour[j]] =
+    [questionsDuTour[j], questionsDuTour[i]];
+}
+let scoreQuiz = 0;
+
+const zoneQuiz = document.getElementById("quiz-zone");
+const niveauQuiz = document.getElementById("quiz-level");
+const boutonCommencer = document.getElementById("start-quiz");
+
+boutonCommencer.addEventListener("click", demarrerQuiz);
+
+function demarrerQuiz() {
+  const niveauChoisi = niveauQuiz.value;
+
+  if (niveauChoisi === "tous") {
+    questionsDuTour = [...questionsBakugo];
+  } else {
+    questionsDuTour = questionsBakugo.filter(
+      question => question.niveau === niveauChoisi
+    );
+  }
+
+  numeroQuestion = 0;
+  scoreQuiz = 0;
+  afficherQuestion();
+}
+
+function afficherQuestion() {
+  if (numeroQuestion >= questionsDuTour.length) {
+    afficherResultat();
+    return;
+  }
+
+  const questionActuelle = questionsDuTour[numeroQuestion];
+
+  zoneQuiz.innerHTML = `
+   <p class="quiz-level-badge">Niveau : ${questionActuelle.niveau}</p>
+<p>Question ${numeroQuestion + 1} sur ${questionsDuTour.length}</p>
+<div class="quiz-progress">
+  <div class="quiz-progress-fill" style="width: ${((numeroQuestion + 1) / questionsDuTour.length) * 100}%"></div>
+</div>
+    <h3>${questionActuelle.question}</h3>
+    <div class="quiz-answers"></div>
+    <p id="quiz-feedback"></p>
+  `;
+
+  const reponses = zoneQuiz.querySelector(".quiz-answers");
+
+  questionActuelle.choix.forEach((reponse, index) => {
+    const bouton = document.createElement("button");
+    bouton.type = "button";
+    bouton.className = "quiz-option";
+    bouton.textContent = reponse;
+    bouton.addEventListener("click", () => verifierReponse(index));
+    reponses.appendChild(bouton);
+  });
+}
+
+function verifierReponse(indexChoisi) {
+  const questionActuelle = questionsDuTour[numeroQuestion];
+  const boutons = zoneQuiz.querySelectorAll(".quiz-option");
+  const retour = document.getElementById("quiz-feedback");
+
+  boutons.forEach(bouton => bouton.disabled = true);
+
+  if (indexChoisi === questionActuelle.bonne) {
+    scoreQuiz++;
+    boutons[indexChoisi].classList.add("correct");
+    retour.textContent = "Bonne réponse !";
+  } else {
+    boutons[indexChoisi].classList.add("incorrect");
+    boutons[questionActuelle.bonne].classList.add("correct");
+    retour.textContent =
+      "Ce n’est pas la bonne réponse. La bonne réponse est : " +
+      questionActuelle.choix[questionActuelle.bonne];
+  }
+
+  const boutonSuivant = document.createElement("button");
+  boutonSuivant.type = "button";
+  boutonSuivant.className = "quiz-option";
+  boutonSuivant.textContent =
+    numeroQuestion + 1 === questionsDuTour.length
+      ? "Voir mon résultat"
+      : "Question suivante";
+
+  boutonSuivant.addEventListener("click", () => {
+    numeroQuestion++;
+    afficherQuestion();
+  });
+
+  zoneQuiz.appendChild(boutonSuivant);
+}
+
+function afficherResultat() {
+  const pourcentage = Math.round(
+    (scoreQuiz / questionsDuTour.length) * 100
+  );
+  const cleRecord = "recordBakugo-" + niveauQuiz.value;
+const ancienRecord = Number(localStorage.getItem(cleRecord)) || 0;
+const nouveauRecord = Math.max(scoreQuiz, ancienRecord);
+localStorage.setItem(cleRecord, nouveauRecord);
+
+  let message;
+
+  if (pourcentage === 100) {
+    message = "Incroyable ! Tu connais Bakugo par cœur !";
+  } else if (pourcentage >= 75) {
+    message = "Excellent résultat ! Tu es un grand fan de Bakugo.";
+  } else if (pourcentage >= 50) {
+    message = "Bien joué ! Tu connais déjà beaucoup de choses.";
+  } else {
+    message = "Continue à découvrir Bakugo et retente le quiz !";
+  }
+
+  zoneQuiz.innerHTML = `
+    <p class="quiz-level-badge">Quiz terminé</p>
+    <h3>${message}</h3>
+    <p>Ton score : <strong>${scoreQuiz} sur ${questionsDuTour.length}</strong></p>
+    <p>Réussite : <strong>${pourcentage} %</strong></p><p>Ton meilleur score à ce niveau : <strong>${nouveauRecord}</strong></p>
+    <button class="quiz-option" type="button" id="recommencer-quiz">
+     <button class="quiz-option" type="button" id="partager-score">
+  Partager mon score
+</button>
+        Recommencer
+    </button>
+  `;
+
+  document
+    .getElementById("recommencer-quiz")
+    .addEventListener("click", demarrerQuiz);
+    document
+  .getElementById("partager-score")
+  .addEventListener("click", function () {
+    const texte =
+      "J’ai fait " + scoreQuiz + " sur " + questionsDuTour.length +
+      " au quiz Bakugo ! " + window.location.href;
+
+    const lienWhatsApp =
+      "https://wa.me/?text=" + encodeURIComponent(texte);
+
+    window.open(lienWhatsApp, "_blank");
+  });
+}
+</script>
+<script>
+  document.querySelectorAll("img").forEach(function (photo) {
+    photo.style.cursor = "zoom-in";
+
+    photo.addEventListener("click", function (evenement) {
+      evenement.preventDefault();
+
+      const fenetre = document.createElement("div");
+      fenetre.className = "photo-agrandie";
+
+      const boutonFermer = document.createElement("span");
+      boutonFermer.className = "fermer-photo";
+      boutonFermer.textContent = "×";
+      boutonFermer.setAttribute("aria-label", "Fermer la photo");
+
+      const grandePhoto = document.createElement("img");
+      grandePhoto.src = photo.currentSrc || photo.src;
+      grandePhoto.alt = photo.alt;
+      const legende = document.createElement("p");
+legende.className = "legende-photo";
+legende.textContent = photo.alt;
+
+      fenetre.appendChild(boutonFermer);
+      fenetre.appendChild(grandePhoto);
+      fenetre.appendChild(legende);
+      document.body.appendChild(fenetre);
+
+      function fermerFenetre() {
+        fenetre.remove();
+        document.removeEventListener("keydown", fermerAvecEchap);
+      }
+
+      function fermerAvecEchap(touche) {
+        if (touche.key === "Escape") {
+          fermerFenetre();
+        }
+      }
+
+      fenetre.addEventListener("click", fermerFenetre);
+      document.addEventListener("keydown", fermerAvecEchap);
+    });
+  });
+</script>
+<button
+  class="retour-haut"
+  id="retour-haut"
+  type="button"
+  aria-label="Retourner en haut de la page"
+>
+  ↑
+</button>
+
+<script>
+  const boutonRetourHaut = document.getElementById("retour-haut");
+
+  boutonRetourHaut.style.display = "none";
+
+  window.addEventListener("scroll", function () {
+    boutonRetourHaut.style.display =
+      window.scrollY > 400 ? "block" : "none";
+  });
+
+  boutonRetourHaut.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+</body>
+</html>
