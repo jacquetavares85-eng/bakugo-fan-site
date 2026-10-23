@@ -716,7 +716,281 @@
         font-size: 23px;
       }
     }
- </style>
+     .section-histoire {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 70px 24px;
+    }
+
+    .section-histoire > h2 {
+      margin: 12px 0 18px;
+      color: #fff8f0;
+      font-size: clamp(34px, 5vw, 56px);
+      text-align: center;
+    }
+
+    .section-histoire > h2 span {
+      color: #ff6b2c;
+    }
+
+    .section-histoire > .etiquette {
+      color: #ff6b2c;
+      text-align: center;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .texte-histoire {
+      max-width: 750px;
+      margin: 0 auto 35px;
+      color: #c9c1bc;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .histoire-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .histoire-etape {
+      padding: 24px;
+      border: 1px solid #563321;
+      border-radius: 16px;
+      background: linear-gradient(145deg, #211714, #100d0c);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .histoire-numero {
+      margin: 0 0 10px;
+      color: #ff6b2c !important;
+      font-size: 13px !important;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    .histoire-etape h3 {
+      margin: 0 0 12px;
+      color: #fff8f0;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    .histoire-etape > p:last-child {
+      margin: 0;
+      color: #c9c1bc;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .histoire-finale {
+      grid-column: 1 / -1;
+      border-color: #ff6b2c;
+      background: linear-gradient(135deg, #302019, #15100e);
+    }
+
+    @media (max-width: 700px) {
+      .section-histoire {
+        padding: 38px 15px;
+      }
+
+      .histoire-list {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .histoire-etape {
+        padding: 18px;
+      }
+
+      .histoire-etape h3 {
+        font-size: 20px;
+      }
+
+      .histoire-finale {
+        grid-column: auto;
+      }
+    }
+     .effet-explosion {
+      position: fixed;
+      z-index: 9998;
+      width: 110px;
+      height: 110px;
+      display: grid;
+      place-items: center;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      animation: explosion-apparait 650ms ease-out forwards;
+    }
+
+    .effet-explosion::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle,
+        #fff8c7 0 8%,
+        #ffb22e 25%,
+        #ff5722 48%,
+        transparent 70%
+      );
+      clip-path: polygon(
+        50% 0%, 60% 30%, 88% 12%, 72% 40%,
+        100% 50%, 72% 60%, 88% 88%, 60% 72%,
+        50% 100%, 40% 72%, 12% 88%, 28% 60%,
+        0 50%, 28% 40%, 12% 12%, 40% 30%
+      );
+      animation: explosion-tourne 650ms ease-out forwards;
+    }
+
+    .effet-explosion span {
+      position: relative;
+      font-size: 48px;
+    }
+
+    .accueil h1 {
+      cursor: pointer;
+    }
+
+    @keyframes explosion-apparait {
+      0% {
+        opacity: 0;
+        scale: 0.2;
+      }
+      35% {
+        opacity: 1;
+        scale: 1.2;
+      }
+      100% {
+        opacity: 0;
+        scale: 1.7;
+      }
+    }
+
+    @keyframes explosion-tourne {
+      to {
+        transform: rotate(90deg);
+      }
+    }
+ .effet-explosion {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.etincelle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ff6a00;
+  box-shadow: 0 0 12px #ff6a00, 0 0 24px #ffb000;
+  animation: jaillir 600ms ease-out forwards;
+  animation-delay: var(--delai);
+}
+
+.etincelle:nth-child(3n) {
+  width: 5px;
+  height: 5px;
+  background: #fff1a8;
+  box-shadow: 0 0 10px #fff1a8, 0 0 18px #ff6a00;
+}
+
+.flash-explosion {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 35px;
+  height: 35px;
+  border: 4px solid #ff6a00;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: flash 450ms ease-out forwards;
+}
+
+@keyframes jaillir {
+  from {
+    transform: translate(0, 0) scale(1.4);
+    opacity: 1;
+  }
+  to {
+    transform: translate(var(--x), var(--y)) scale(0.1);
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  from {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+  }
+  to {
+    width: 110px;
+    height: 110px;
+    opacity: 0;
+  }
+}
+ .signature-createur {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 0 0 24px;
+  color: #b9aaa2;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.signature-createur strong {
+  color: #ff6a2a;
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+ .bouton,
+.quiz-card button,
+#retour-haut {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bouton:hover,
+.quiz-card button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 106, 42, 0.25);
+}
+
+.bouton:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #fff1a8;
+  outline-offset: 4px;
+}
+ header nav a {
+  display: inline-block;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+header nav a:hover {
+  color: #ff6a2a;
+  transform: translateY(-2px);
+}
+ @media (hover: hover) {
+  #galerie img,
+  .galerie img {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  #galerie img:hover,
+  .galerie img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 18px rgba(255, 106, 42, 0.65);
+  }
+}</style>
 </head>
 
 <body>
@@ -730,12 +1004,17 @@
             <a href="#videos">Vidéos</a>
             <a href="#fiche">Fiche technique</a>
             <a href="#quiz">Quiz</a>
+            <a href="#histoire">Histoire</a>
     </nav>
   </header>
 
   <main>
     <section class="accueil" id="accueil">
       <div class="contenu">
+        <p class="signature-createur">
+  <span>UN PROJET IMAGINÉ ET CRÉÉ PAR</span>
+  <strong>JACQUES TAVARES</strong>
+</p>
         <p class="etiquette">My Hero Academia • Dossier de personnage</p>
 
         <div class="titre-hero-mobile">
@@ -751,6 +1030,7 @@
         </p>
 
         <a class="bouton" href="#profil">Découvrir son profil</a>
+        <a class="bouton" href="#histoire">Histoire complète</a>
 
         <p class="mention">
           Projet de fan non officiel. Non affilié aux créateurs de l’œuvre.
@@ -760,7 +1040,110 @@
           <img src="images/bakugo7-detoure.png" alt="Bakugo">
         </div>
     </section>
-     <section class="section-profil" id="profil">
+    <section class="section-histoire" id="histoire">
+  <p class="etiquette">Chronologie • attention aux spoilers</p>
+  <h2>L’histoire complète de <span>Bakugo</span></h2>
+  <p class="texte-histoire">
+    De son entrée à Yuei jusqu’à son affrontement contre All For One,
+    découvre comment Katsuki évolue au fil des saisons.
+  </p>
+
+  <div class="histoire-list">
+    <article class="histoire-etape">
+      <p class="histoire-numero">SAISON 1</p>
+      <h3>Le rival de la classe 1-A</h3>
+      <p>
+        Bakugo entre au lycée Yuei avec un objectif clair : devenir le meilleur
+        héros. Son assurance et son tempérament explosif le mettent souvent en
+        conflit avec Izuku Midoriya, son ancien camarade d’enfance. Les exercices
+        de héros commencent à lui montrer qu’il devra aussi apprendre à composer
+        avec les autres.
+      </p>
+    </article>
+
+    <article class="histoire-etape">
+      <p class="histoire-numero">SAISON 2</p>
+      <h3>Le Festival sportif</h3>
+      <p>
+        Bakugo se fait remarquer pendant le Festival sportif de Yuei. Il atteint
+        la finale contre Shoto Todoroki et remporte le tournoi. Pourtant, sa
+        victoire ne le satisfait pas : il estime que Todoroki ne s’est pas battu
+        à pleine puissance. Bakugo veut une victoire obtenue dans un vrai combat.
+      </p>
+    </article>
+
+    <article class="histoire-etape">
+      <p class="histoire-numero">SAISON 3</p>
+      <h3>L’enlèvement et Kamino</h3>
+      <p>
+        L’Alliance des vilains enlève Bakugo, mais il refuse de les rejoindre.
+        Les élèves et les héros le retrouvent à Kamino. Il assiste ensuite à
+        l’affrontement entre All Might et All For One, qui marque la fin de
+        l’activité héroïque d’All Might. Bakugo se reproche d’avoir été la cause
+        de son enlèvement et affronte Izuku pour exprimer ce qu’il ressent.
+      </p>
+    </article>
+
+    <article class="histoire-etape">
+      <p class="histoire-numero">SAISON 4</p>
+      <h3>Apprendre ce qu’est un héros</h3>
+      <p>
+        Bakugo échoue d’abord à l’examen du permis provisoire. Avec Todoroki,
+        il suit des cours de rattrapage où il doit apprendre à communiquer avec
+        des enfants difficiles. Il comprend peu à peu que la force ne suffit pas :
+        un héros doit aussi savoir protéger et rassurer les autres.
+      </p>
+    </article>
+
+    <article class="histoire-etape">
+      <p class="histoire-numero">SAISON 5</p>
+      <h3>Le travail d’équipe</h3>
+      <p>
+        Pendant l’entraînement commun entre les classes 1-A et 1-B, Bakugo
+        montre qu’il sait mieux coordonner son équipe. Il participe aussi à un
+        stage auprès d’Endeavor avec Izuku et Todoroki. Sa manière de combattre
+        reste directe, mais il devient plus attentif aux personnes qui
+        combattent à ses côtés.
+      </p>
+    </article>
+
+    <article class="histoire-etape">
+      <p class="histoire-numero">SAISON 6</p>
+      <h3>La guerre et le choix de protéger Izuku</h3>
+      <p>
+        Pendant la guerre contre le Front de libération paranormal, Bakugo
+        combat aux côtés des autres héros contre Shigaraki. Quand Izuku est en
+        danger, il s’interpose et reçoit une attaque grave. Après la guerre, il
+        reconnaît les torts qu’il a causés à Izuku et lui présente ses excuses.
+        Il aide aussi la classe 1-A à le ramener à Yuei.
+      </p>
+    </article>
+
+    <article class="histoire-etape">
+      <p class="histoire-numero">SAISON 7</p>
+      <h3>La bataille finale commence</h3>
+      <p>
+        Les héros affrontent les vilains sur plusieurs champs de bataille.
+        Bakugo combat Shigaraki avec d’autres héros, mais il est grièvement
+        blessé et son cœur s’arrête. Edgeshot tente alors de le sauver. Pendant
+        ce temps, All Might affronte All For One.
+      </p>
+    </article>
+
+    <article class="histoire-etape histoire-finale">
+      <p class="histoire-numero">SAISON 8 • SAISON FINALE</p>
+      <h3>Bakugo contre All For One</h3>
+      <p>
+        Grâce aux efforts d’Edgeshot et à son propre Alter, Bakugo se réveille
+        au milieu du combat. Il rejoint la bataille, sauve All Might quand
+        All For One est sur le point de l’atteindre, puis affronte lui-même
+        le grand vilain. Son parcours culmine dans ce combat où sa détermination
+        et son évolution de héros sont mises à l’épreuve.
+      </p>
+    </article>
+  </div>
+</section>
+    <section class="section-profil" id="profil">
       <p class="etiquette">Fiche de personnage</p>
       <h2>Un esprit <span>explosif</span></h2>
 
@@ -1391,19 +1774,60 @@ legende.textContent = photo.alt;
 <script>
   const boutonRetourHaut = document.getElementById("retour-haut");
 
-  boutonRetourHaut.style.display = "none";
+  if (boutonRetourHaut) {
+    boutonRetourHaut.style.display = "none";
 
-  window.addEventListener("scroll", function () {
-    boutonRetourHaut.style.display =
-      window.scrollY > 400 ? "block" : "none";
-  });
-
-  boutonRetourHaut.addEventListener("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+    window.addEventListener("scroll", function () {
+      boutonRetourHaut.style.display =
+        window.scrollY > 400 ? "block" : "none";
     });
-  });
+
+    boutonRetourHaut.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  }
+</script>
+
+<script>
+  const titreBakugo = document.querySelector(".accueil h1");
+
+  if (titreBakugo) {
+    titreBakugo.addEventListener("click", function (evenement) {
+      const explosion = document.createElement("div");
+      explosion.className = "effet-explosion";
+      explosion.style.left = evenement.clientX + "px";
+      explosion.style.top = evenement.clientY + "px";
+
+      const nombreEtincelles = 14;
+
+      for (let i = 0; i < nombreEtincelles; i++) {
+        const etincelle = document.createElement("span");
+        etincelle.className = "etincelle";
+
+        const angle = (i / nombreEtincelles) * Math.PI * 2;
+        const distance = 55 + Math.random() * 65;
+
+        etincelle.style.setProperty("--x", Math.cos(angle) * distance + "px");
+        etincelle.style.setProperty("--y", Math.sin(angle) * distance + "px");
+        etincelle.style.setProperty("--delai", Math.random() * 100 + "ms");
+
+        explosion.appendChild(etincelle);
+      }
+
+      const flash = document.createElement("span");
+      flash.className = "flash-explosion";
+      explosion.appendChild(flash);
+
+      document.body.appendChild(explosion);
+
+      setTimeout(function () {
+        explosion.remove();
+      }, 650);
+    });
+  }
 </script>
 </body>
 </html>
