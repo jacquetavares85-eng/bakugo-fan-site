@@ -658,6 +658,64 @@
         font-size: 13px;
       }
     }
+     @media (max-width: 700px) {
+      main > section {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 32px 15px;
+      }
+
+      header {
+        padding: 14px 16px;
+      }
+
+      header nav {
+        gap: 7px 12px;
+      }
+
+      header nav a {
+        font-size: 15px;
+      }
+
+      main h2 {
+        font-size: clamp(27px, 7.5vw, 36px);
+        line-height: 1.1;
+        margin: 18px 0;
+      }
+
+      main p {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      #galerie img,
+      .galerie img {
+        height: 155px;
+        object-fit: cover;
+      }
+
+      .quiz-section {
+        margin: 22px auto;
+        padding: 30px 12px;
+      }
+
+      .quiz-card {
+        margin: 18px auto;
+        padding: 20px 14px;
+      }
+
+      .quiz-section .quiz-option {
+        min-height: 50px;
+        padding: 12px;
+        font-size: 15px;
+      }
+
+      .retour-haut {
+        width: 46px;
+        height: 46px;
+        font-size: 23px;
+      }
+    }
  </style>
 </head>
 
