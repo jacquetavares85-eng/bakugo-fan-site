@@ -585,6 +585,79 @@
       font-size: 18px;
       text-align: center;
     }
+     @media (max-width: 700px) {
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 16px;
+      }
+
+      nav a {
+        white-space: nowrap;
+      }
+    }
+     .titre-hero-mobile {
+      display: contents;
+    }
+
+    .image-hero-mobile {
+      display: none;
+    }
+
+    @media (max-width: 700px) {
+      .accueil {
+        padding: 38px 18px;
+      }
+
+      .titre-hero-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        margin: 18px 0;
+      }
+
+      .titre-hero-mobile h1 {
+        flex: 1;
+        min-width: 0;
+        margin: 0;
+        font-size: clamp(38px, 12vw, 52px);
+        line-height: 0.95;
+      }
+
+      .image-hero-mobile {
+        display: block;
+        flex: 0 0 34%;
+        max-width: 135px;
+      }
+
+      .image-hero-mobile img {
+        display: block;
+        width: 100%;
+        max-height: 210px;
+        object-fit: contain;
+      }
+
+      .accueil > .image-hero {
+        display: none;
+      }
+
+      .accueil .description {
+        margin: 18px 0;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+
+      .accueil .bouton {
+        padding: 13px 18px;
+      }
+
+      .accueil .mention {
+        margin-top: 18px;
+        font-size: 13px;
+      }
+    }
  </style>
 </head>
 
@@ -607,7 +680,12 @@
       <div class="contenu">
         <p class="etiquette">My Hero Academia • Dossier de personnage</p>
 
-        <h1>Katsuki<br><span>Bakugo</span></h1>
+        <div class="titre-hero-mobile">
+  <h1>Katsuki<br><span>Bakugo</span></h1>
+  <div class="image-hero-mobile">
+    <img src="images/bakugo7-detoure.png" alt="Bakugo">
+  </div>
+</div>
 
         <p class="description">
           Explosif, déterminé et toujours prêt à se dépasser :
